@@ -1,0 +1,47 @@
+{
+  "pins": {
+    "ghc9102": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "5f7451255f69dc631d3697f274406e936584d876",
+      "url": "https://github.com/NixOS/nixpkgs/archive/5f7451255f69dc631d3697f274406e936584d876.tar.gz",
+      "hash": "1lp534sds3qjj5072z5v1pdb6vyimi2l9470axjfx84chl8j367w",
+      "frozen": true
+    },
+    "ghc966": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "71e91c409d1e654808b2621f28a327acfdad8dc2",
+      "url": "https://github.com/NixOS/nixpkgs/archive/71e91c409d1e654808b2621f28a327acfdad8dc2.tar.gz",
+      "hash": "1b47065q41ar9585ra4akb4s4kjwcs3p3g4chrpps8704vz7nx0s",
+      "frozen": true
+    },
+    "ghc984": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "5f7451255f69dc631d3697f274406e936584d876",
+      "url": "https://github.com/NixOS/nixpkgs/archive/5f7451255f69dc631d3697f274406e936584d876.tar.gz",
+      "hash": "1lp534sds3qjj5072z5v1pdb6vyimi2l9470axjfx84chl8j367w",
+      "frozen": true
+    }
+  },
+  "version": 5
+}

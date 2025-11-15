@@ -6,6 +6,8 @@ The most convenient way to use it is to have [`direnv` hooked into your shell](h
 
 The pins are added with the help of <https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=ghc>.
 
+Note: ghcHEAD is ghc915 at the moment.
+
 ```bash
 nix-shell <path to this repo> --argstr ghcVersion "ghcxxx" # use a custom ghc version you want
 ```

@@ -41,6 +41,20 @@
       "url": "https://github.com/NixOS/nixpkgs/archive/5f7451255f69dc631d3697f274406e936584d876.tar.gz",
       "hash": "1lp534sds3qjj5072z5v1pdb6vyimi2l9470axjfx84chl8j367w",
       "frozen": true
+    },
+    "ghcHEAD": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "93af7bada9fedf19e4cecbcf3f25be102ac5e08e",
+      "url": "https://github.com/NixOS/nixpkgs/archive/93af7bada9fedf19e4cecbcf3f25be102ac5e08e.tar.gz",
+      "hash": "1za7ib6a0dkvk7h0y4294yppl43i7kpwnwkm6c0sm00ssq03gsbn",
+      "frozen": true
     }
   },
   "version": 5

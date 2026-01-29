@@ -34,6 +34,7 @@ pkgs.mkShell {
     # GHC dependent
     (lib.optional withHLS haskellPackages.haskell-language-server)
     haskellPackages.ghc
+    haskellPackages.retrie
 
     (justStaticExecutables (dontCheck (haskellPackagesDefault.callHackage "fourmolu" "0.12.0.0" { })))
     haskellPackagesDefault.cabal-install

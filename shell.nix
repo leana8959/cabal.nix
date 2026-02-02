@@ -1,6 +1,7 @@
 let
   sources = import ./npins;
 
+  # This is the latest verison used in cabal's CI
   ghcVersionDefault = "ghc966";
 in
 {
@@ -33,9 +34,9 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     # GHC dependent
     (lib.optional withHLS haskellPackages.haskell-language-server)
-    haskellPackages.ghc
-    haskellPackages.retrie
+    (if ghcVersion == "ghc942" then haskell.compiler.ghc942 else haskellPackages.ghc)
 
+    haskellPackagesDefault.retrie
     (justStaticExecutables (dontCheck (haskellPackagesDefault.callHackage "fourmolu" "0.12.0.0" { })))
     haskellPackagesDefault.cabal-install
     haskellPackagesDefault.fix-whitespace

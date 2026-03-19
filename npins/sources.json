@@ -28,6 +28,32 @@
       "hash": "1lp534sds3qjj5072z5v1pdb6vyimi2l9470axjfx84chl8j367w",
       "frozen": true
     },
+    "ghc9123": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "ab3a4934fd052a5b41299ebccfee96bd5fe9f34a",
+      "url": "https://github.com/nixos/nixpkgs/archive/ab3a4934fd052a5b41299ebccfee96bd5fe9f34a.tar.gz",
+      "hash": "0j0mgi6x2256hyqgdm7yb1b2ka8815452javyydpjrj8mxw6xk8b"
+    },
+    "ghc9141": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "ab3a4934fd052a5b41299ebccfee96bd5fe9f34a",
+      "url": "https://github.com/nixos/nixpkgs/archive/ab3a4934fd052a5b41299ebccfee96bd5fe9f34a.tar.gz",
+      "hash": "0j0mgi6x2256hyqgdm7yb1b2ka8815452javyydpjrj8mxw6xk8b"
+    },
     "ghc926": {
       "type": "Git",
       "repository": {

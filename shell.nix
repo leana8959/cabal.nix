@@ -23,6 +23,7 @@ let
 
   # GHC version to work with cabal is overridable
   haskellPackages = pkgs.haskell.packages.${ghcVersion};
+  haskellPackages' = pkgs.haskellPackages;
 
   inherit (pkgs.haskell.lib)
     justStaticExecutables
@@ -38,7 +39,16 @@ pkgs.mkShell {
 
     haskellPackagesDefault.retrie
     (justStaticExecutables (dontCheck (haskellPackagesDefault.callHackage "fourmolu" "0.12.0.0" { })))
-    haskellPackagesDefault.cabal-install
+
+    # Cabal version of haskellPackagesDefault is 3.12.
+    # It doesn't support ghc later than 912.
+    (
+      if ghcVersion == "ghc9123" || ghcVersion == "ghc9141" then
+        haskellPackages'
+      else
+        haskellPackagesDefault
+    ).cabal-install
+
     haskellPackagesDefault.fix-whitespace
     haskellPackagesDefault.hlint
     haskellPackagesDefault.apply-refact

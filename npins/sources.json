@@ -4,15 +4,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "NixOS",
+        "owner": "nixos",
         "repo": "nixpkgs"
       },
-      "branch": "master",
+      "branch": "nixos-unstable",
       "submodules": false,
       "revision": "5c79b3dda06744a55869cae2cba6873fbbd64394",
-      "url": "https://github.com/NixOS/nixpkgs/archive/5c79b3dda06744a55869cae2cba6873fbbd64394.tar.gz",
-      "hash": "13m9vp5iy7cnhsx0nwg2xjgk7phv817zkbvx2bqls7jkk0rcvr4q",
-      "frozen": true
+      "url": "https://github.com/nixos/nixpkgs/archive/5c79b3dda06744a55869cae2cba6873fbbd64394.tar.gz",
+      "hash": "13m9vp5iy7cnhsx0nwg2xjgk7phv817zkbvx2bqls7jkk0rcvr4q"
     },
     "ghc9102": {
       "type": "Git",

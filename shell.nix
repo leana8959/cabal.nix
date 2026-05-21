@@ -1,60 +1,38 @@
 let
   sources = import ./npins;
-
-  # This is the latest verison used in cabal's CI
-  ghcVersionDefault = "ghc966";
 in
+
 {
-  pkgs ?
-    if builtins.hasAttr ghcVersion sources then
-      import sources.${ghcVersion} { }
-    else
-      throw "${ghcVersion} is not pinned, try pinning it or passing a nixpkgs instance instead",
+  # Build tools with GHC == 9.12
+  # https://github.com/haskell/cabal/pull/11857
+  pkgs ? import sources.nixpkgs { },
 
-  ghcVersion ? ghcVersionDefault, # the version chosen by upstream cabal.nix
-
-  withHLS ? false,
+  ghcVersion ? "9.12.3",
 }:
 
 let
-  # The toolings default to ghc966
-  haskellPackagesDefault =
-    (import sources.${ghcVersionDefault} { }).haskell.packages.${ghcVersionDefault};
+  ghcs-nix = import sources.ghcs-nix;
+  inherit (pkgs) lib;
+  inherit (pkgs) haskellPackages;
+  inherit (pkgs.haskell.lib) justStaticExecutables;
+in
 
-  # GHC version to work with cabal is overridable
-  haskellPackages = pkgs.haskell.packages.${ghcVersion};
-  haskellPackages' = pkgs.haskellPackages;
-
-  inherit (pkgs.haskell.lib)
-    justStaticExecutables
-    dontCheck
-    ;
+let
+  toUnderscoreVersion = version: "ghc-${lib.replaceString "." "_" version}";
 in
 
 pkgs.mkShell {
-  nativeBuildInputs = with pkgs; [
-    # GHC dependent
-    (lib.optional withHLS haskellPackages.haskell-language-server)
-    (if ghcVersion == "ghc942" then haskell.compiler.ghc942 else haskellPackages.ghc)
+  name = "cabal";
+  packages = [
+    ghcs-nix.${toUnderscoreVersion ghcVersion}
 
-    haskellPackagesDefault.retrie
-    (justStaticExecutables (dontCheck (haskellPackagesDefault.callHackage "fourmolu" "0.12.0.0" { })))
+    (justStaticExecutables (haskellPackages.callCabal2nix "hlint" sources.hlint { }))
+    # apply-refact doesn't build
+    haskellPackages.doctest
+    haskellPackages.fix-whitespace
 
-    # Cabal version of haskellPackagesDefault is 3.12.
-    # It doesn't support ghc later than 912.
-    (
-      if ghcVersion == "ghc9123" || ghcVersion == "ghc9141" then
-        haskellPackages'
-      else
-        haskellPackagesDefault
-    ).cabal-install
-
-    haskellPackagesDefault.fix-whitespace
-    haskellPackagesDefault.hlint
-    haskellPackagesDefault.apply-refact
-    haskellPackagesDefault.doctest
-    haskellPackagesDefault.ghcid
-    pkg-config
-    zlib.dev
+    pkgs.cabal-install
+    pkgs.pkg-config
+    pkgs.zlib.dev
   ];
 }

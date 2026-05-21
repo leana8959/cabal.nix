@@ -1,33 +1,53 @@
 {
   "pins": {
-    "ghc884": {
-      "type": "Git",
+    "apply-refact": {
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
-        "owner": "nixos",
-        "repo": "nixpkgs"
+        "owner": "mpickering",
+        "repo": "apply-refact"
       },
-      "branch": "nixos-unstable",
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
       "submodules": false,
-      "revision": "5c79b3dda06744a55869cae2cba6873fbbd64394",
-      "url": "https://github.com/nixos/nixpkgs/archive/5c79b3dda06744a55869cae2cba6873fbbd64394.tar.gz",
-      "hash": "13m9vp5iy7cnhsx0nwg2xjgk7phv817zkbvx2bqls7jkk0rcvr4q"
+      "version": "0.15.0.0",
+      "revision": "b25ff13d00ad0c621f94b13fe1eebeb21f04113b",
+      "url": "https://api.github.com/repos/mpickering/apply-refact/tarball/0.15.0.0",
+      "hash": "159dy14bjq5x8m5flaqw0jig54gv8ggmgd3dzng0x6haxa5l72hp",
+      "frozen": true
     },
-    "ghc9102": {
+    "ghcs-nix": {
       "type": "Git",
       "repository": {
-        "type": "GitHub",
-        "owner": "NixOS",
-        "repo": "nixpkgs"
+        "type": "GitLab",
+        "repo_path": "bgamari/ghcs-nix",
+        "server": "https://gitlab.haskell.org/"
       },
       "branch": "master",
       "submodules": false,
-      "revision": "5f7451255f69dc631d3697f274406e936584d876",
-      "url": "https://github.com/NixOS/nixpkgs/archive/5f7451255f69dc631d3697f274406e936584d876.tar.gz",
-      "hash": "1lp534sds3qjj5072z5v1pdb6vyimi2l9470axjfx84chl8j367w",
+      "revision": "f5bc736328cbfe8e8da3a8d89f6d8ec4f6e79660",
+      "url": "https://gitlab.haskell.org/api/v4/projects/bgamari%2Fghcs-nix/repository/archive.tar.gz?sha=f5bc736328cbfe8e8da3a8d89f6d8ec4f6e79660",
+      "hash": "1sxci299h3pmqgipwavhsz5ar584vgb0cjpjv5afmfajm38x1xh7"
+    },
+    "hlint": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ndmitchell",
+        "repo": "hlint"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v3.10",
+      "revision": "512f73ecb872f85935a1cd283d89b22e85c6bf51",
+      "url": "https://api.github.com/repos/ndmitchell/hlint/tarball/v3.10",
+      "hash": "03ldc0zqbdg1zqpaby49vf0jk9pf9dxcgp91vljvwid68q5i7vx1",
       "frozen": true
     },
-    "ghc9123": {
+    "nixpkgs": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
@@ -38,100 +58,7 @@
       "submodules": false,
       "revision": "ab3a4934fd052a5b41299ebccfee96bd5fe9f34a",
       "url": "https://github.com/nixos/nixpkgs/archive/ab3a4934fd052a5b41299ebccfee96bd5fe9f34a.tar.gz",
-      "hash": "0j0mgi6x2256hyqgdm7yb1b2ka8815452javyydpjrj8mxw6xk8b"
-    },
-    "ghc9141": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nixos",
-        "repo": "nixpkgs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "ab3a4934fd052a5b41299ebccfee96bd5fe9f34a",
-      "url": "https://github.com/nixos/nixpkgs/archive/ab3a4934fd052a5b41299ebccfee96bd5fe9f34a.tar.gz",
-      "hash": "0j0mgi6x2256hyqgdm7yb1b2ka8815452javyydpjrj8mxw6xk8b"
-    },
-    "ghc926": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nixos",
-        "repo": "nixpkgs"
-      },
-      "branch": "nixos-unstable",
-      "submodules": false,
-      "revision": "8ad5e8132c5dcf977e308e7bf5517cc6cc0bf7d8",
-      "url": "https://github.com/nixos/nixpkgs/archive/8ad5e8132c5dcf977e308e7bf5517cc6cc0bf7d8.tar.gz",
-      "hash": "17v6wigks04x1d63a2wcd7cc4z9ca6qr0f4xvw1pdw83f8a3c0nj"
-    },
-    "ghc942": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nixos",
-        "repo": "nixpkgs"
-      },
-      "branch": "nixos-unstable",
-      "submodules": false,
-      "revision": "fb32148a96e64be4b11000770ea1e9e83966b572",
-      "url": "https://github.com/nixos/nixpkgs/archive/fb32148a96e64be4b11000770ea1e9e83966b572.tar.gz",
-      "hash": "01qvcvjzzpzk6m3vy1hjysm400c92vfm7f1z256s362syrf3lv4m"
-    },
-    "ghc948": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nixos",
-        "repo": "nixpkgs"
-      },
-      "branch": "nixos-unstable",
-      "submodules": false,
-      "revision": "336eda0d07dc5e2be1f923990ad9fdb6bc8e28e3",
-      "url": "https://github.com/nixos/nixpkgs/archive/336eda0d07dc5e2be1f923990ad9fdb6bc8e28e3.tar.gz",
-      "hash": "0v8vnmgw7cifsp5irib1wkc0bpxzqcarlv8mdybk6dck5m7p10lr"
-    },
-    "ghc966": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "NixOS",
-        "repo": "nixpkgs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "71e91c409d1e654808b2621f28a327acfdad8dc2",
-      "url": "https://github.com/NixOS/nixpkgs/archive/71e91c409d1e654808b2621f28a327acfdad8dc2.tar.gz",
-      "hash": "1b47065q41ar9585ra4akb4s4kjwcs3p3g4chrpps8704vz7nx0s",
-      "frozen": true
-    },
-    "ghc984": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "NixOS",
-        "repo": "nixpkgs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "5f7451255f69dc631d3697f274406e936584d876",
-      "url": "https://github.com/NixOS/nixpkgs/archive/5f7451255f69dc631d3697f274406e936584d876.tar.gz",
-      "hash": "1lp534sds3qjj5072z5v1pdb6vyimi2l9470axjfx84chl8j367w",
-      "frozen": true
-    },
-    "ghcHEAD": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "NixOS",
-        "repo": "nixpkgs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "93af7bada9fedf19e4cecbcf3f25be102ac5e08e",
-      "url": "https://github.com/NixOS/nixpkgs/archive/93af7bada9fedf19e4cecbcf3f25be102ac5e08e.tar.gz",
-      "hash": "1za7ib6a0dkvk7h0y4294yppl43i7kpwnwkm6c0sm00ssq03gsbn",
+      "hash": "0j0mgi6x2256hyqgdm7yb1b2ka8815452javyydpjrj8mxw6xk8b",
       "frozen": true
     }
   },

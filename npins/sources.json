@@ -1,22 +1,5 @@
 {
   "pins": {
-    "apply-refact": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "mpickering",
-        "repo": "apply-refact"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "0.15.0.0",
-      "revision": "b25ff13d00ad0c621f94b13fe1eebeb21f04113b",
-      "url": "https://api.github.com/repos/mpickering/apply-refact/tarball/0.15.0.0",
-      "hash": "159dy14bjq5x8m5flaqw0jig54gv8ggmgd3dzng0x6haxa5l72hp",
-      "frozen": true
-    },
     "ghcs-nix": {
       "type": "Git",
       "repository": {
@@ -29,23 +12,6 @@
       "revision": "f5bc736328cbfe8e8da3a8d89f6d8ec4f6e79660",
       "url": "https://gitlab.haskell.org/api/v4/projects/bgamari%2Fghcs-nix/repository/archive.tar.gz?sha=f5bc736328cbfe8e8da3a8d89f6d8ec4f6e79660",
       "hash": "1sxci299h3pmqgipwavhsz5ar584vgb0cjpjv5afmfajm38x1xh7"
-    },
-    "hlint": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ndmitchell",
-        "repo": "hlint"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "v3.10",
-      "revision": "512f73ecb872f85935a1cd283d89b22e85c6bf51",
-      "url": "https://api.github.com/repos/ndmitchell/hlint/tarball/v3.10",
-      "hash": "03ldc0zqbdg1zqpaby49vf0jk9pf9dxcgp91vljvwid68q5i7vx1",
-      "frozen": true
     },
     "nixpkgs": {
       "type": "Git",

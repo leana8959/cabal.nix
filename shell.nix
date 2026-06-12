@@ -59,6 +59,8 @@ pkgs.mkShell {
     hlint-3_10
     fourmolu-0_12_0_0
 
+    pkgs.typos
+
     # apply-refact doesn't build
     pkgs.haskellPackages.doctest
     pkgs.haskellPackages.fix-whitespace

@@ -1,32 +1,12 @@
 {
   "pins": {
-    "ghcs-nix": {
-      "type": "Git",
-      "repository": {
-        "type": "GitLab",
-        "repo_path": "bgamari/ghcs-nix",
-        "server": "https://gitlab.haskell.org/"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "f5bc736328cbfe8e8da3a8d89f6d8ec4f6e79660",
-      "url": "https://gitlab.haskell.org/api/v4/projects/bgamari%2Fghcs-nix/repository/archive.tar.gz?sha=f5bc736328cbfe8e8da3a8d89f6d8ec4f6e79660",
-      "hash": "1sxci299h3pmqgipwavhsz5ar584vgb0cjpjv5afmfajm38x1xh7"
-    },
     "nixpkgs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nixos",
-        "repo": "nixpkgs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "ab3a4934fd052a5b41299ebccfee96bd5fe9f34a",
-      "url": "https://github.com/nixos/nixpkgs/archive/ab3a4934fd052a5b41299ebccfee96bd5fe9f34a.tar.gz",
-      "hash": "0j0mgi6x2256hyqgdm7yb1b2ka8815452javyydpjrj8mxw6xk8b",
-      "frozen": true
+      "type": "Channel",
+      "name": "nixos-unstable",
+      "artifact": "nixexprs.tar.xz",
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1017464.567a49d1913c/nixexprs.tar.xz",
+      "hash": "sha256-rcUHdUtJEvMdNEl2Wq+YpHraHKfcer3KsBscpZEF2Yg="
     }
   },
-  "version": 5
+  "version": 8
 }

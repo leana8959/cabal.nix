@@ -7,11 +7,14 @@ in
   # https://github.com/haskell/cabal/pull/11857
   pkgs ? import sources.nixpkgs { },
 
-  ghcVersion ? "9.12.3",
+  withHLS ? true,
 }:
 
 let
-  ghcs-nix = import sources.ghcs-nix;
+  inherit (pkgs) lib;
+in
+
+let
   pkgs_stackage_22_43 = import (pkgs.fetchFromGitHub {
     owner = "NixOS";
     repo = "nixpkgs";
@@ -25,14 +28,6 @@ let
     rev = "7fdb15681cb5daa386e25abe7ce611d2744ecc83";
     hash = "sha256-QGbXhs6gSMg8w+kNco0UY5RVX0V1GWy+B/HGGPfU3dY=";
   }) { };
-in
-
-let
-  inherit (pkgs) lib;
-in
-
-let
-  toUnderscoreVersion = version: "ghc-${lib.replaceString "." "_" version}";
 in
 
 let
@@ -54,19 +49,24 @@ in
 pkgs.mkShell {
   name = "cabal";
   packages = [
-    ghcs-nix.${toUnderscoreVersion ghcVersion}
-
     hlint-3_10
     fourmolu-0_12_0_0
+    pkgs.haskell.compiler.ghc912
 
     pkgs.typos
 
-    # apply-refact doesn't build
+    # TODO: add apply-refact of recommended version
     pkgs.haskellPackages.doctest
     pkgs.haskellPackages.fix-whitespace
 
     pkgs.cabal-install
     pkgs.pkg-config
     pkgs.zlib.dev
+  ]
+  ++ lib.optionals withHLS [
+    pkgs.haskell.packages.ghc912.haskell-language-server
+  ]
+  ++ [
+    pkgs.npins
   ];
 }

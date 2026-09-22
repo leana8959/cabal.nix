@@ -56,7 +56,7 @@ pkgs.mkShell {
     pkgs.typos
 
     # TODO: add apply-refact of recommended version
-    pkgs.haskellPackages.doctest
+    pkgs.haskell.packages.ghc912.doctest
     pkgs.haskellPackages.fix-whitespace
 
     pkgs.cabal-install

@@ -31,6 +31,8 @@ let
 in
 
 let
+  ghcVersion = "ghc912";
+
   fourmolu-0_12_0_0 =
     let
       inherit (pkgs_stackage_22_43.haskell.lib) dontCheck justStaticExecutables;
@@ -49,14 +51,16 @@ in
 pkgs.mkShell {
   name = "cabal";
   packages = [
+    pkgs.npins
+
     hlint-3_10
     fourmolu-0_12_0_0
-    pkgs.haskell.compiler.ghc912
+    pkgs.haskell.compiler.${ghcVersion}
 
     pkgs.typos
 
     # TODO: add apply-refact of recommended version
-    pkgs.haskell.packages.ghc912.doctest
+    pkgs.haskell.packages.${ghcVersion}.doctest
     pkgs.haskellPackages.fix-whitespace
 
     pkgs.cabal-install
@@ -64,9 +68,6 @@ pkgs.mkShell {
     pkgs.zlib.dev
   ]
   ++ lib.optionals withHLS [
-    pkgs.haskell.packages.ghc912.haskell-language-server
-  ]
-  ++ [
-    pkgs.npins
+    pkgs.haskell.packages.${ghcVersion}.haskell-language-server
   ];
 }
